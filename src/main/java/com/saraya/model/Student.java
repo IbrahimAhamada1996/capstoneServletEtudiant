@@ -17,8 +17,16 @@ public class Student {
         this.trainingDuration = trainingDuration;
         this.registrationDate = registrationDate;
     }
+    public Student(long id, String firstname, String lastname, LocalDate dateOfBirth, String trainingDuration, LocalDate registrationDate) {
+        this.id  = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.dateOfBirth = dateOfBirth;
+        this.trainingDuration = trainingDuration;
+        this.registrationDate = registrationDate;
+    }
 
-    public long getId() {
+    public  long getId() {
         return id;
     }
 

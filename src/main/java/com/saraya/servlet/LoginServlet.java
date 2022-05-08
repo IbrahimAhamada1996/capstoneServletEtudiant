@@ -26,17 +26,21 @@ public class LoginServlet extends HttpServlet {
 
         System.out.println("req = " + username + ", resp = " + password);
         if (this.loginService.connexionAdmin(username,password)){
+            req.getSession().setAttribute("username",username);
+            req.getSession().setAttribute("password",password);
             resp.sendRedirect("/home/admin/list");
-          //  req.getRequestDispatcher("/WEB-INF/view/admin/home.jsp").forward(req,resp);
+
         }else if (this.loginService.connexionAdmin6(username,password)){
+            req.getSession().setAttribute("username",username);
+            req.getSession().setAttribute("password",password);
             resp.sendRedirect("/home/admin6/list");
-          //  req.getRequestDispatcher("/WEB-INF/view/admin6/home.jsp").forward(req,resp);
+
         }else if (this.loginService.connexionAdmin16(username,password)){
+            req.getSession().setAttribute("username",username);
+            req.getSession().setAttribute("password",password);
             resp.sendRedirect("/home/admin16/list");
-          //  req.getRequestDispatcher("/WEB-INF/view/admin16/home.jsp").forward(req,resp);
         }else {
             resp.sendRedirect("/login.do");
-//            req.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(req,resp);
         }
     }
 }
